@@ -12,7 +12,7 @@ const EstiloGlobal = createGlobalStyle`
     --texto-title: #363f5f;
     --texto-body: #969cb3;
     --fundo: #F0F2F5;
-    --shape: #FFFFFF;
+    --branco: #FFFFFF;
   }
   
   * {
