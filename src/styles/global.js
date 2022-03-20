@@ -31,7 +31,8 @@ const EstiloGlobal = createGlobalStyle`
   }
 
   body {
-    background: var(--backgroud);
+    background: var(--cordefundo);
+    -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {
