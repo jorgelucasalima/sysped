@@ -9,7 +9,7 @@ export const Container = styled.div`
   div {
     background: var(--branco);
     padding: 1.5rem 2rem;
-    border-radius: 0.25px;
+    border-radius: 0.25rem;
     color: var(--texto-title);
  
 
