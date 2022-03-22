@@ -6,8 +6,9 @@ export function Header() {
     <Container>
       <ContentMenu>
         <a href='#'>Empresa</a>
-        <a href='#'>Produtos</a>
-        <a href='#'>Funcionários</a>
+        <a href='#'>Insumo</a>
+        <a href='#'>Fornecedores</a>
+        <a href='#'>Obras</a>
       </ContentMenu>
       <Content>
         <FiPackage size={35}/>

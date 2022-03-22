@@ -11,9 +11,10 @@ export function TabelaPedidos() {
               <th>id</th>
               <th>Descrição</th>
               <th>Status</th>
-              <th>Categoria</th>
-              <th>Data</th>
-              <th>Funcionário</th>
+              <th>Obra</th>
+              <th>Data Pedido</th>  
+              <th>Data Entrega</th>  
+              <th>Responsável</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -24,6 +25,7 @@ export function TabelaPedidos() {
               <td>Aberto</td>
               <td>Obras Residencial</td>
               <td>01/01/2020</td>
+              <td>01/01/2020</td>
               <td>Manoel Augusto</td>
               <td>
                 <a><FiEye size={20}/> </a>
@@ -33,8 +35,9 @@ export function TabelaPedidos() {
             <tr>
               <td>2</td>
               <td>Reforma Itamaracá</td>
-              <td>Em andamento</td>
+              <td>Em Cotação</td>
               <td>Obras Residencial</td>
+              <td>01/01/2021</td>
               <td>01/01/2021</td>
               <td>Manoel Augusto</td>
               <td>
