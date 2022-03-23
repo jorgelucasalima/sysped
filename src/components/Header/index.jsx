@@ -6,7 +6,7 @@ export function Header() {
     <Container>
       <ContentMenu>
         <a href='#'>Empresa</a>
-        <a href='#'>Insumo</a>
+        <a href='#'>Insumos</a>
         <a href='#'>Fornecedores</a>
         <a href='#'>Obras</a>
       </ContentMenu>
