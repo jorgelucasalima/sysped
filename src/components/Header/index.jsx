@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import {FiPackage} from 'react-icons/fi';
 import {Container, Content, ContentMenu} from './styles'
+import Modal from 'react-modal';
 
-export function Header() {
+
+export function Header(props) {
+
   return (
     <Container>
       <ContentMenu>
@@ -12,7 +16,8 @@ export function Header() {
       </ContentMenu>
       <Content>
         <FiPackage size={35}/>
-        <button type='button'>Cadastrar Pedido</button>
+        <button type='button' onClick={props.modalPedidosOpen}>Cadastrar Pedido</button>
+      
       </Content>
     </Container>
   )

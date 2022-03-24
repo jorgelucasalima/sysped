@@ -1,7 +1,16 @@
 import { Container } from "./styles";
 import { FiEye, FiEdit } from "react-icons/fi";
+import { useEffect } from "react";
+import {api} from '../../services/api';
 
 export function TabelaPedidos() {
+
+  useEffect(() => {
+    api.get('pedidos')
+    .then(response => console.log(response.data))
+    .catch(error => {'deu erro'});
+  }, [])
+
   return (
     <Container>
       <div>
