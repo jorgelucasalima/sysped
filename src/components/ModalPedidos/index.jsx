@@ -7,6 +7,8 @@ export function ModalPedidos(props) {
     <Modal
       isOpen={props.isOpen}
       onRequestClose={props.onRequestClose}
+      overlayClassName="react-modal-overlay"
+      className="react-modal-content"
     >
       <Container>
         <button
