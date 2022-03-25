@@ -6,18 +6,18 @@ export const Container = styled.form`
   h2{
     color: var(--texto-title);
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   input {
     width: 100%;
     padding: 0 1.5rem;
-    height: 4rem;
+    height: 3rem;
     border-radius: 0.25rem;
     border: 1px solid #d7d7d7;
     background: #e7e9ee;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     &::placeholder {
       color: var(--texto-body);
@@ -30,12 +30,12 @@ export const Container = styled.form`
   select {
     width: 100%;
     padding: 0 1.5rem;
-    height: 4rem;
+    height: 3rem;
     border-radius: 0.25rem;
     border: 1px solid #d7d7d7;
     background: #e7e9ee;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     
     & + select {
       margin-top: 0.7rem;
