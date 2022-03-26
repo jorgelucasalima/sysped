@@ -3,6 +3,12 @@ import Modal from 'react-modal'
 import { FiX } from "react-icons/fi";
 
 export function ModalPedidos(props) {
+
+  function criarNovoPedido() {
+    
+  }
+
+
   return(
     <Modal
       isOpen={props.isOpen}
