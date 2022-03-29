@@ -1,13 +1,15 @@
 import { Container } from "./styles";
 import { FiEye, FiEdit } from "react-icons/fi";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {api} from '../../services/api';
 
 export function TabelaPedidos() {
 
+  const [pedidos, setPedidos] = useState([]);
+
   useEffect(() => {
     api.get('pedidos')
-    .then(response => console.log(response.data))
+    .then(response => setPedidos(response.data.pedidos))
     .catch(error => {'deu erro'});
   }, [])
 
@@ -28,32 +30,21 @@ export function TabelaPedidos() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Casa de tia ua</td>
-              <td>Aberto</td>
-              <td>Obras Residencial</td>
-              <td>01/01/2020</td>
-              <td>01/01/2020</td>
-              <td>Manoel Augusto</td>
-              <td>
-                <a><FiEye size={20}/> </a>
-                <a><FiEdit size={20}/> </a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Reforma Itamaracá</td>
-              <td>Em Cotação</td>
-              <td>Obras Residencial</td>
-              <td>01/01/2021</td>
-              <td>01/01/2021</td>
-              <td>Manoel Augusto</td>
-              <td>
-                <a><FiEye size={20}/> </a>
-                <a><FiEdit size={20}/> </a>
-              </td>
-            </tr>
+            {pedidos.map( pedido => (
+              <tr key={pedido.id}>
+                <td>{pedido.id}</td>
+                <td>{pedido.descricaoPedido}</td>
+                <td>{pedido.statusPedido}</td>
+                <td>{pedido.obra}</td>
+                <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(pedido.dataCriacaoPedido))}</td>
+                <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(pedido.dataEntregaPedido))}</td>
+                <td>{pedido.responsavelPedido}</td>
+                <td>
+                  <a><FiEye size={20}/> </a>
+                  <a><FiEdit size={20}/> </a>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

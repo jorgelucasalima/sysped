@@ -2,6 +2,7 @@ import {Container} from './styles'
 import Modal from 'react-modal'
 import { FiX } from "react-icons/fi";
 import { useState } from 'react';
+import {api} from '../../services/api'
 
 export function ModalPedidos(props) {
 
@@ -16,14 +17,18 @@ export function ModalPedidos(props) {
   function criarNovoPedido(event) {
     event.preventDefault()
     
-    console.log({
+    const dados ={
       statusPedido,
       obra,
       descricaoPedido,
       dataCriacaoPedido,
       dataEntregaPedido,
       responsavelPedido,
-    })
+    }
+
+    api.post('/pedidos', dados)
+
+
   }
 
 
@@ -50,10 +55,11 @@ export function ModalPedidos(props) {
           value={statusPedido}
           onChange={event => setStatusPedido(event.target.value)}
         >
-          <option value="aberto">Aberto</option>
-          <option value="cotacao">Em cotação</option>
-          <option value="aprovado">Aprovado</option>
-          <option value="entregue">Entregue</option>
+          <option value="none" selected="selected" hidden>Selecione Status do Pedido</option>
+          <option value="Aberto">Aberto</option>
+          <option value="Em Cotação">Em cotação</option>
+          <option value="Aprovado">Aprovado</option>
+          <option value="Entregue">Entregue</option>
         </select>
         <select 
           name="obra" 
@@ -61,6 +67,7 @@ export function ModalPedidos(props) {
           value={obra}
           onChange={event => setObra(event.target.value)}
         >
+          <option value="none" selected="selected" hidden>Selecione a Obra</option>
           <option value="ObraCliente">Obra Cliente Recife</option>
           <option value="ObraBrennand">Obra brennand</option>
           <option value="ObraShopping">Obra Shopping Recife</option>
