@@ -54,8 +54,9 @@ export function ModalPedidos(props) {
           id="status"
           value={statusPedido}
           onChange={event => setStatusPedido(event.target.value)}
+          defaultValue={'DEFAULT'}
         >
-          <option value="none" selected="selected" hidden>Selecione Status do Pedido</option>
+          <option value='DEFAULT' selected="selected" hidden >Selecione Status do Pedido</option>
           <option value="Aberto">Aberto</option>
           <option value="Em Cotação">Em cotação</option>
           <option value="Aprovado">Aprovado</option>
@@ -66,8 +67,9 @@ export function ModalPedidos(props) {
           id="obra"
           value={obra}
           onChange={event => setObra(event.target.value)}
+          defaultValue={'DEFAULT'}
         >
-          <option value="none" selected="selected" hidden>Selecione a Obra</option>
+          <option value="DEFAULT" selected="selected" hidden>Selecione a Obra</option>
           <option value="ObraCliente">Obra Cliente Recife</option>
           <option value="ObraBrennand">Obra brennand</option>
           <option value="ObraShopping">Obra Shopping Recife</option>
