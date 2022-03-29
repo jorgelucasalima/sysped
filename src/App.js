@@ -4,7 +4,7 @@ import EstiloGlobal from "./styles/global";
 import Modal from "react-modal";
 import { useState } from "react"; 
 import { ModalPedidos } from "./components/ModalPedidos";
-import {PedidosContext} from "./contexts/PedidosContext"
+import {PedidosProvider} from "../../contexts/"
 
 Modal.setAppElement('#root');
 
@@ -22,12 +22,12 @@ function App() {
   }
 
   return (
-    <PedidosContext.Provider value={[]}>
+    <PedidosProvider>
       <Header modalPedidosOpen={modalPedidosOpen} />
       <ModalPedidos isOpen={isModalPedidosOpen} onRequestClose={modalPedidosClose}/>
       <Dashboard/>
       <EstiloGlobal/>
-    </PedidosContext.Provider>
+    </PedidosProvider>
   );
 }
 

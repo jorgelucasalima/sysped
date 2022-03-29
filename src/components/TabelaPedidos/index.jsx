@@ -2,16 +2,13 @@ import { Container } from "./styles";
 import { FiEye, FiEdit } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import {api} from '../../services/api';
+import { useContext } from "react";
+import { PedidosContext } from "../../contexts/PedidosContext";
 
 export function TabelaPedidos() {
 
-  const [pedidos, setPedidos] = useState([]);
-
-  useEffect(() => {
-    api.get('pedidos')
-    .then(response => setPedidos(response.data.pedidos))
-    .catch(error => {'deu erro'});
-  }, [])
+  const data = useContext(PedidosContext)
+  
 
   return (
     <Container>
