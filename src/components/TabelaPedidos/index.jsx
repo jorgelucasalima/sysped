@@ -1,13 +1,11 @@
 import { Container } from "./styles";
 import { FiEye, FiEdit } from "react-icons/fi";
-import { useEffect, useState } from "react";
-import {api} from '../../services/api';
 import { useContext } from "react";
-import { PedidosContext } from "../../contexts/PedidosContext";
+import { PedidosContext } from "../../contexts/pedidos";
 
 export function TabelaPedidos() {
 
-  const data = useContext(PedidosContext)
+  const pedidos = useContext(PedidosContext)
   
 
   return (

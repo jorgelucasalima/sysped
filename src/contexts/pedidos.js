@@ -4,7 +4,7 @@ import { api } from "../services/api";
 
 export const PedidosContext = createContext([])
 
-function PedidoProvider() {
+function PedidoProvider({ children }) {
   const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ function PedidoProvider() {
 
   return (
     <PedidosContext.Provider value={pedidos}>
+      {children}
     </PedidosContext.Provider>
   )
 }

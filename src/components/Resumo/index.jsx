@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import { FiLayers, FiCheckCircle, FiArchive } from "react-icons/fi";
 import { useContext } from "react";
-import { PedidosContext} from "../../contexts/PedidosContext";
+import { PedidosContext } from "../../contexts/pedidos";
 
 export function Resumo() {
 
