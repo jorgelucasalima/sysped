@@ -4,7 +4,7 @@ import { api } from "../services/api";
 
 export const PedidosContext = createContext([])
 
-export function PedidoProvider() {
+function PedidoProvider() {
   const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
@@ -17,6 +17,6 @@ export function PedidoProvider() {
     <PedidosContext.Provider value={pedidos}>
     </PedidosContext.Provider>
   )
-
-
 }
+
+export default PedidoProvider
