@@ -5,7 +5,11 @@ import { PedidosContext } from "../../contexts/pedidos";
 
 export function Resumo() {
 
-  const data = useContext(PedidosContext)
+  const pedidos = useContext(PedidosContext)
+
+  let quantidadePedidos = pedidos.length;
+  console.log(pedidos)
+
 
   return (
     <Container>
@@ -14,7 +18,7 @@ export function Resumo() {
           <p>Pedidos</p>
           <FiLayers size={23}/>
         </header>
-        <strong>45</strong>
+        <strong>{quantidadePedidos}</strong>
       </div>
       <div>
         <header>
