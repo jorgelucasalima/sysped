@@ -11,6 +11,8 @@ export const ContentMenu = styled.div`
   display: flex;
   align-items: center;
 
+  padding: 1rem 1rem 8rem;
+
   a {
     color: #FFFFFF;
     font-size: 1.15rem;

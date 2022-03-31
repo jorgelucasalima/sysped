@@ -1,14 +1,14 @@
 import {Container} from "./styles"
-import HeaderMenu from "../../components/HeaderMenu"
 import { FiEye, FiEdit } from "react-icons/fi";
+import { Content } from "../Header/styles";
 
 export function TabelaInsumos() {
   return (
-
-    <>
-      
-
       <Container>
+        <Content>
+          <button type='button'>Cadastrar Pedido</button>
+        </Content>
+
         <div>
           <table>
             <thead>
@@ -37,6 +37,5 @@ export function TabelaInsumos() {
           </table>
         </div>
       </Container>
-    </>
   )
 }

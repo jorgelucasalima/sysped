@@ -4,7 +4,7 @@ export function HeaderMenu(params) {
   return(
     <Container>
       <ContentMenu>
-        <a href='/pedidos'>Pedidos</a>
+        <a href='/'>Pedidos</a>
         <a href='/empresa'>Empresa</a>
         <a href='/insumos'>Insumos</a>
         <a href='/fornecedores'>Fornecedores</a>

@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 4rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.25rem 1rem;
+  
+  margin-top: 1rem;
 
   table {
     width: 100%;

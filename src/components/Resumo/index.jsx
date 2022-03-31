@@ -22,7 +22,7 @@ export function Resumo() {
       </div>
       <div>
         <header>
-          <p>Produtos</p>
+          <p>Insumos</p>
           <FiArchive size={23}/>
         </header>
         <strong>23</strong>
