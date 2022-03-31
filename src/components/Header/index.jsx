@@ -6,11 +6,14 @@ import Modal from 'react-modal';
 
 export function Header(props) {
 
+//criar react routes - routes.js
+
+
   return (
     <Container>
       <ContentMenu>
         <a href='#'>Empresa</a>
-        <a href='#'>Insumos</a>
+        <a href='/insumos'>Insumos</a>
         <a href='#'>Fornecedores</a>
         <a href='#'>Obras</a>
       </ContentMenu>
