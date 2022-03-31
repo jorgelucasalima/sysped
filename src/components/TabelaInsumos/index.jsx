@@ -1,11 +1,12 @@
 import {Container} from "./styles"
 import HeaderMenu from "../../components/HeaderMenu"
+import { FiEye, FiEdit } from "react-icons/fi";
 
 export function TabelaInsumos() {
   return (
 
     <>
-      <HeaderMenu/>
+      
 
       <Container>
         <div>

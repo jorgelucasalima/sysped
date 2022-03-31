@@ -4,7 +4,7 @@ export const Container = styled.header`
   background: var(--azul);
 `;
 
-export const contentMenu = styled.div`
+export const ContentMenu = styled.div`
   max-width: 1120px;
   margin: 0 auto;
 

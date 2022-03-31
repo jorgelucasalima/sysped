@@ -1,4 +1,4 @@
-import {} from './styles'
+import {Container, ContentMenu} from './styles'
 
 export function HeaderMenu(params) {
   return(

@@ -1,21 +1,15 @@
-import { useState } from 'react';
 import {FiPackage} from 'react-icons/fi';
 import {Container, Content, ContentMenu} from './styles'
-import Modal from 'react-modal';
-
+import { Link } from 'react-router-dom';
 
 export function Header(props) {
-
-//criar react routes - routes.js
-
-
   return (
     <Container>
       <ContentMenu>
-        <a href='#'>Empresa</a>
-        <a href='/insumos'>Insumos</a>
-        <a href='#'>Fornecedores</a>
-        <a href='#'>Obras</a>
+        <Link to="/empresa">Empresa</Link>
+        <Link to="/insumos">Insumos</Link>
+        <Link to="/fornecedores">Fornecedores</Link>
+        <Link to="/obras">Obras</Link>
       </ContentMenu>
       <Content>
         <FiPackage size={35}/>
