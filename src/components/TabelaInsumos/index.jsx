@@ -2,12 +2,12 @@ import {Container, Content} from "./styles"
 import { FiEye, FiEdit } from "react-icons/fi";
 
 
-export function TabelaInsumos() {
+export function TabelaInsumos(props) {
   return (
       <Container>
         <Content>
           <a href=""></a>
-          <button type='button'>Cadastrar Pedido</button>
+          <button type='button' onClick={props.modalInsumosOpen}>Cadastrar Insumo</button>
         </Content>
 
         <div>
@@ -18,7 +18,7 @@ export function TabelaInsumos() {
                 <th>Descrição</th>
                 <th>Unidade</th>
                 <th>Preço Base</th>
-                <th>Material</th>  
+                <th>Categoria</th>  
                 <th>Ações</th>
               </tr>
             </thead>
