@@ -1,11 +1,12 @@
-import {Container} from "./styles"
+import {Container, Content} from "./styles"
 import { FiEye, FiEdit } from "react-icons/fi";
-import { Content } from "../Header/styles";
+
 
 export function TabelaInsumos() {
   return (
       <Container>
         <Content>
+          <a href=""></a>
           <button type='button'>Cadastrar Pedido</button>
         </Content>
 

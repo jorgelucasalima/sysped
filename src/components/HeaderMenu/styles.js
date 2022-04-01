@@ -7,11 +7,9 @@ export const Container = styled.header`
 export const ContentMenu = styled.div`
   max-width: 1120px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
-
-  padding: 1rem 1rem 8rem;
+  padding: 1rem 1rem 2rem;
 
   a {
     color: #FFFFFF;

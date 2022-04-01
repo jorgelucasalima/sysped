@@ -4,7 +4,6 @@ export const Container = styled.div`
   max-width: 1120px;
   margin: 0 auto;
   padding: 0.25rem 1rem;
-  
   margin-top: 1rem;
 
   table {
@@ -33,7 +32,29 @@ export const Container = styled.div`
       }
 
     }
-
-
   }
 `;
+
+export const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  button{
+    font-size: 1rem;
+    color: #FFFFFF;
+    background: var(--azul-claro);
+    border: 0;
+    padding: 0 2rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+   
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+  
+
+`
+
