@@ -63,6 +63,12 @@ export function ModalInsumos(props) {
           value={descricaoInsumo} 
           onChange={event => setDescricaoInsumo(event.target.value)}
         />
+        <input 
+          type="number" 
+          placeholder='Preço Base'
+          value={precoBaseInsumo}
+          onChange={event => setPrecoBaseInsumo(event.target.value)}
+        />
         <select 
           name="unidadeInsumo" 
           id="unidadeInsumo"
@@ -74,12 +80,6 @@ export function ModalInsumos(props) {
           <option value="cm">Cm²</option>
           <option value="km">Km</option>
         </select>
-        <input 
-          type="number" 
-          placeholder='Preço Base'
-          value={precoBaseInsumo}
-          onChange={event => setPrecoBaseInsumo(event.target.value)}
-        />
         <select 
           name="categoriaInsumo" 
           id="categoriaInsumo"

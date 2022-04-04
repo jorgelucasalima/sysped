@@ -18,12 +18,11 @@ export const Container = styled.form`
     background: #e7e9ee;
     font-weight: 400;
     font-size: 1.25rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
 
     &::placeholder {
       color: var(--texto-body);
-    }
-    & + input {
-      margin-top: 0.7rem;
     }
   }
 
@@ -36,11 +35,8 @@ export const Container = styled.form`
     background: #e7e9ee;
     font-weight: 400;
     font-size: 1.25rem;
-    
-    & + select {
-      margin-top: 0.7rem;
-      margin-bottom: 0.7rem;
-    }
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
   }
 
   button[type="submit"] {
