@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {createServer, Model} from 'miragejs'
 
+
+/*
 createServer({
 
   models: {
@@ -31,19 +33,6 @@ createServer({
           dataEntregaPedido: new Date('2022-05-12 12:00:00'),
           responsavelPedido: 'Ayra Alves de Lima'
         },
-      ],
-
-      insumos:[
-        {
-          idInsumo:1,
-          codigoInsumo: 'CAN1',
-          descricaoInsumo: 'CANO',
-          unidadeInsumo: 'cm',
-          precoBaseInsumo: 22,
-          categoriaInsumo: 'mh',
-          fornecedor: 'tupan'
-
-        }
       ]
     })
   },
@@ -69,6 +58,7 @@ createServer({
 
     //rota para CRUD de insumos
 
+    
     this.get('/insumos', () => {
       return this.schema.all('insumo')
     })
@@ -78,10 +68,11 @@ createServer({
 
       return schema.create('insumo', dados)
     })
-
+   
 
   }
 })
+ */
 
 
 

@@ -2,7 +2,7 @@ import {Container} from './styles'
 import Modal from 'react-modal'
 import { FiX } from "react-icons/fi";
 import { useState } from 'react';
-import {api} from '../../services/api'
+import firebase from '../../services/firebaseConnection'
 
 
 
@@ -18,19 +18,25 @@ export function ModalInsumos(props) {
 
 
   //função de criar insumo
-  function criarNovoInsumo(event) {
+  async function criarNovoInsumo(event) {
     event.preventDefault()
-
-    const dados ={
-      codigoInsumo,
-      descricaoInsumo,
-      unidadeInsumo,
-      precoBaseInsumo,
-      categoriaInsumo,
-      fornecedor
-    }
-
-    api.post('/insumos', dados)
+    
+    await firebase.firestore().collection('insumos')
+    .add({
+      codigoInsumo: codigoInsumo,
+      descricaoInsumo: descricaoInsumo,
+      unidadeInsumo: unidadeInsumo,
+      precoBaseInsumo: precoBaseInsumo,
+      categoriaInsumo: categoriaInsumo,
+      fornecedor: fornecedor
+    })
+    .then(() => {
+      console.log("DADOS CADASTRADOS");
+      //implementar o toasty
+    })
+    .catch(error => {
+      console.error("Error adding document: ", error);
+    });
   }
 
 
@@ -55,25 +61,25 @@ export function ModalInsumos(props) {
           placeholder='Código'
           type="text" 
           value={codigoInsumo} 
-          onChange={event => setCodigoInsumo(event.target.value)}
+          onChange={(event) => setCodigoInsumo(event.target.value)}
         />
         <input 
           placeholder='Descrição Insumo'
           type="text" 
           value={descricaoInsumo} 
-          onChange={event => setDescricaoInsumo(event.target.value)}
+          onChange={(event) => setDescricaoInsumo(event.target.value)}
         />
         <input 
           type="number" 
           placeholder='Preço Base'
           value={precoBaseInsumo}
-          onChange={event => setPrecoBaseInsumo(event.target.value)}
+          onChange={(event) => setPrecoBaseInsumo(event.target.value)}
         />
         <select 
           name="unidadeInsumo" 
           id="unidadeInsumo"
           value={unidadeInsumo}
-          onChange={event => setUnidadeInsumo(event.target.value)}
+          onChange={(event) => setUnidadeInsumo(event.target.value)}
           defaultValue={'DEFAULT'}
         >
           <option value='DEFAULT' selected="selected" hidden >Selecione a unidade do Insumo</option>
@@ -84,7 +90,7 @@ export function ModalInsumos(props) {
           name="categoriaInsumo" 
           id="categoriaInsumo"
           value={categoriaInsumo}
-          onChange={event => setCategoriaInsumo(event.target.value)}
+          onChange={(event) => setCategoriaInsumo(event.target.value)}
           defaultValue={'DEFAULT'}
         >
           <option value="DEFAULT" selected="selected" hidden>Selecione a categoria</option>
@@ -95,7 +101,7 @@ export function ModalInsumos(props) {
           name="fornecedor" 
           id="fornecedor" 
           value={fornecedor}
-          onChange={event => setFornecedor(event.target.value)}
+          onChange={(event) => setFornecedor(event.target.value)}
           defaultValue={'DEFAULT'}
         >
           <option value="DEFAULT" selected="selected" hidden>Selecione o Fornecedor</option>
