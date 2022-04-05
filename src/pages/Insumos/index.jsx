@@ -3,6 +3,7 @@ import { TabelaInsumos } from "../../components/TabelaInsumos";
 import Modal from 'react-modal'
 import {ModalInsumos} from '../../components/ModalInsumos'
 import { useState } from "react";
+import InsumoProvider from "../../contexts/insumos";
 
 
 Modal.setAppElement('#root');
@@ -20,10 +21,10 @@ export function Insumos() {
   }
 
   return(
-    <>
+    <InsumoProvider>
       <HeaderMenu/>
       <ModalInsumos isOpen={isModalInsumosOpen} onRequestClose={modalInsumosClose}/>
       <TabelaInsumos modalInsumosOpen={modalInsumosOpen} />
-    </>
+    </InsumoProvider>
   )
 }
