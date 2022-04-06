@@ -10,7 +10,7 @@ export function ModalFornecedores(props) {
   
   //estados dos inputs
   const [fornecedor, setFornecedor] = useState('')
-  const [cateforiaFornecedor, setCateforiaFornecedor] = useState('')
+  const [categoriaFornecedor, setCategoriaFornecedor] = useState('')
   const [cpnjFornecedor, setCpnjFornecedor] = useState('')
   const [telefoneFornecedor, setTelefoneFornecedor] = useState('')
   const [emailFornecedor, setEmailFornecedor] = useState('')
@@ -21,10 +21,10 @@ export function ModalFornecedores(props) {
   async function criarNovoFornecedor(event) {
     event.preventDefault()
     
-    await firebase.firestore().collection('insumos')
+    await firebase.firestore().collection('fornecedores')
     .add({
       fornecedor: fornecedor,
-      cateforiaFornecedor: cateforiaFornecedor,
+      categoriaFornecedor: categoriaFornecedor,
       cpnjFornecedor: cpnjFornecedor,
       telefoneFornecedor: telefoneFornecedor,
       emailFornecedor: emailFornecedor,
@@ -66,8 +66,8 @@ export function ModalFornecedores(props) {
         <select 
           name="cateforiaFornecedor" 
           id="cateforiaFornecedor"
-          value={cateforiaFornecedor}
-          onChange={(event) => setCateforiaFornecedor(event.target.value)}
+          value={categoriaFornecedor}
+          onChange={(event) => setCategoriaFornecedor(event.target.value)}
           defaultValue={'DEFAULT'}
         >
           <option value='DEFAULT' selected="selected" hidden >Selecione a categoria</option>

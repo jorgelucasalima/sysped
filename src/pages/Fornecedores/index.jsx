@@ -24,7 +24,7 @@ export function Fornecedores() {
     <FornecedorProvider>
       <HeaderMenu/>
       <ModalFornecedores isOpen={isModalFornecedoresOpen} onRequestClose={modalFornecedoresClose}/>
-      <TabelaFornecedores modalInsumosOpen={modalFornecedoresOpen} />
+      <TabelaFornecedores modalFornecedoresOpen={modalFornecedoresOpen} />
     </FornecedorProvider>
   )
 }

@@ -17,7 +17,7 @@ function FornecedorProvider({ children }) {
           arrayFornecedores.push({
             id: item.id,
             fornecedor: item.data().fornecedor,
-            cateforiaFornecedor: item.data().cateforiaFornecedor,
+            categoriaFornecedor: item.data().categoriaFornecedor,
             cpnjFornecedor: item.data().cpnjFornecedor,
             telefoneFornecedor: item.data().telefoneFornecedor,
             emailFornecedor: item.data().emailFornecedor,

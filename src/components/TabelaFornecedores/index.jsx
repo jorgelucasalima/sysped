@@ -1,13 +1,13 @@
 import {Container, Content} from "./styles"
 import { FiEye, FiEdit } from "react-icons/fi";
 import { useContext } from "react";
-import { FornecedoresContext } from "../../contexts/fornecedores";
+import { FornecedoresContext} from '../../contexts/fornecedores'
 
 export function TabelaFornecedores(props) {
 
 
   const fornecedores = useContext(FornecedoresContext)
-
+  console.log(fornecedores)
 
   return (
       <Container>
@@ -22,8 +22,8 @@ export function TabelaFornecedores(props) {
               <tr>
                 <th>Fornecedor</th>
                 <th>Categoria</th>
-                <th>cnpj</th>
-                <th>telefone</th>
+                <th>Cnpj</th>
+                <th>Telefone</th>
                 <th>E-mail</th>  
                 <th>Endereço</th>  
                 <th>Ações</th>
@@ -33,7 +33,7 @@ export function TabelaFornecedores(props) {
                 {fornecedores.map( fornecedor => (
                   <tr key={fornecedor.id}>
                     <td>{fornecedor.fornecedor}</td>
-                    <td>{fornecedor.cateforiaFornecedor}</td>
+                    <td>{fornecedor.categoriaFornecedor}</td>
                     <td>{fornecedor.cpnjFornecedor}</td>
                     <td>{fornecedor.telefoneFornecedor}</td>
                     <td>{fornecedor.emailFornecedor}</td>
