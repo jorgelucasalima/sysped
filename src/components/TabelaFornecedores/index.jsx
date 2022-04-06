@@ -31,18 +31,21 @@ export function TabelaFornecedores(props) {
             </thead>
             <tbody>
               
-                  <tr>
-                    <td>d</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+            {fornecedores.map( fornecedor => (
+                  <tr key={fornecedor.id}>
+                    <td>{fornecedor.fornecedor}</td>
+                    <td>{fornecedor.categoriaFornecedor}</td>
+                    <td>{fornecedor.cnpjFornecedor}</td>
+                    <td>{fornecedor.telefoneFornecedor}</td>
+                    <td>{fornecedor.emailFornecedor}</td>
+                    <td>{fornecedor.enderecoFornecedor}</td>
                     <td>
                       <a><FiEye size={20}/> </a>
                       <a><FiEdit size={20}/> </a>
                     </td>
                   </tr>
+                ))
+              }
 
             </tbody>
           </table>

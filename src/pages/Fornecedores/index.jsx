@@ -3,7 +3,7 @@ import { TabelaFornecedores } from "../../components/TabelaFornecedores";
 import Modal from 'react-modal'
 import {ModalFornecedores} from '../../components/ModalFornecedores'
 import { useState } from "react";
-import FornecedorProvider from "../../contexts/insumos";
+import FornecedorProvider from "../../contexts/fornecedores";
 
 
 Modal.setAppElement('#root');
