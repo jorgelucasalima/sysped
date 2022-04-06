@@ -14,7 +14,6 @@ export function TabelaPedidos() {
         <table>
           <thead>
             <tr>
-              <th>id</th>
               <th>Descrição</th>
               <th>Status</th>
               <th>Obra</th>
@@ -27,12 +26,11 @@ export function TabelaPedidos() {
           <tbody>
             {pedidos.map( pedido => (
               <tr key={pedido.id}>
-                <td>{pedido.id}</td>
                 <td>{pedido.descricaoPedido}</td>
                 <td>{pedido.statusPedido}</td>
                 <td>{pedido.obra}</td>
-                <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(pedido.dataCriacaoPedido))}</td>
-                <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(pedido.dataEntregaPedido))}</td>
+                <td>{pedido.dataCriacaoPedido}</td>
+                <td>{pedido.dataEntregaPedido}</td>
                 <td>{pedido.responsavelPedido}</td>
                 <td>
                   <a><FiEye size={20}/> </a>
@@ -46,3 +44,6 @@ export function TabelaPedidos() {
     </Container>
   )
 }
+
+// <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(pedido.dataCriacaoPedido))}</td>
+//<td>{new Intl.DateTimeFormat('pt-BR').format(new Date(pedido.dataEntregaPedido))}</td>

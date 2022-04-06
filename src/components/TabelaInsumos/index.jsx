@@ -32,17 +32,17 @@ export function TabelaInsumos(props) {
             <tbody>
                 {insumos.map( insumo => (
                   <tr key={insumo.id}>
-                  <td>{insumo.codigoInsumo}</td>
-                  <td>{insumo.descricaoInsumo}</td>
-                  <td>{insumo.unidadeInsumo}</td>
-                  <td>{insumo.precoBaseInsumo}</td>
-                  <td>{insumo.categoriaInsumo}</td>
-                  <td>{insumo.fornecedor}</td>
-                  <td>
-                    <a><FiEye size={20}/> </a>
-                    <a><FiEdit size={20}/> </a>
-                  </td>
-                </tr>
+                    <td>{insumo.codigoInsumo}</td>
+                    <td>{insumo.descricaoInsumo}</td>
+                    <td>{insumo.unidadeInsumo}</td>
+                    <td>{insumo.precoBaseInsumo}</td>
+                    <td>{insumo.categoriaInsumo}</td>
+                    <td>{insumo.fornecedor}</td>
+                    <td>
+                      <a><FiEye size={20}/> </a>
+                      <a><FiEdit size={20}/> </a>
+                    </td>
+                  </tr>
                 ))}
             </tbody>
           </table>

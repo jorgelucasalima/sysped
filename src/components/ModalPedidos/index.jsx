@@ -2,7 +2,7 @@ import {Container} from './styles'
 import Modal from 'react-modal'
 import { FiX } from "react-icons/fi";
 import { useState } from 'react';
-import {api} from '../../services/api'
+import firebase from '../../services/firebaseConnection';
 
 export function ModalPedidos(props) {
 
@@ -14,21 +14,25 @@ export function ModalPedidos(props) {
   const [responsavelPedido, setResponsavelPedido] = useState('')
 
 
-  function criarNovoPedido(event) {
+  async function criarNovoPedido(event) {
     event.preventDefault()
     
-    const dados ={
-      statusPedido,
-      obra,
-      descricaoPedido,
-      dataCriacaoPedido,
-      dataEntregaPedido,
-      responsavelPedido,
-    }
-
-    api.post('/pedidos', dados)
-
-
+    await firebase.firestore().collection('pedidos')
+    .add({
+      statusPedido: statusPedido,
+      obra: obra,
+      descricaoPedido: descricaoPedido,
+      dataCriacaoPedido: dataCriacaoPedido,
+      dataEntregaPedido: dataEntregaPedido,
+      responsavelPedido: responsavelPedido
+    })
+    .then(() => {
+      console.log("DADOS CADASTRADOS");
+      //implementar o toasty
+    })
+    .catch(error => {
+      console.error("Error adding document: ", error);
+    });
   }
 
 
