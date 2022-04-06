@@ -11,7 +11,7 @@ export function ModalFornecedores(props) {
   //estados dos inputs
   const [fornecedor, setFornecedor] = useState('')
   const [categoriaFornecedor, setCategoriaFornecedor] = useState('')
-  const [cpnjFornecedor, setCpnjFornecedor] = useState('')
+  const [cnpjFornecedor, setCnpjFornecedor] = useState('')
   const [telefoneFornecedor, setTelefoneFornecedor] = useState('')
   const [emailFornecedor, setEmailFornecedor] = useState('')
   const [enderecoFornecedor, setEnderecoFornecedor] = useState('')
@@ -25,7 +25,7 @@ export function ModalFornecedores(props) {
     .add({
       fornecedor: fornecedor,
       categoriaFornecedor: categoriaFornecedor,
-      cpnjFornecedor: cpnjFornecedor,
+      cnpjFornecedor: cnpjFornecedor,
       telefoneFornecedor: telefoneFornecedor,
       emailFornecedor: emailFornecedor,
       enderecoFornecedor: enderecoFornecedor
@@ -77,8 +77,8 @@ export function ModalFornecedores(props) {
         <input 
           placeholder='CNPJ'
           type="text" 
-          value={cpnjFornecedor} 
-          onChange={(event) => setCpnjFornecedor(event.target.value)}
+          value={cnpjFornecedor} 
+          onChange={(event) => setCnpjFornecedor(event.target.value)}
         />
         <input 
           placeholder='Telefone'

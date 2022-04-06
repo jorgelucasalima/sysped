@@ -1,11 +1,12 @@
 import { createContext, useState, useEffect } from "react";
-import firebase from "../services/firebaseConnection"
+import firebase from "../services/firebaseConnection";
+
 
 export const FornecedoresContext = createContext([])
 
-
 function FornecedorProvider({ children }) {
-  const [fornecedores, setFornecedores] = useState([])
+  const [fornecedores, setFornecedores] = useState([]);
+  console.log(fornecedores)
 
   useEffect(() => {
     async function loadFornecedores() {
@@ -13,15 +14,16 @@ function FornecedorProvider({ children }) {
       .onSnapshot((doc) => {
         let arrayFornecedores = []
 
-        doc.forEach((item)=>{
+        doc.forEach((item) => {
           arrayFornecedores.push({
             id: item.id,
             fornecedor: item.data().fornecedor,
             categoriaFornecedor: item.data().categoriaFornecedor,
-            cpnjFornecedor: item.data().cpnjFornecedor,
+            cnpjFornecedor: item.data().cnpjFornecedor,
             telefoneFornecedor: item.data().telefoneFornecedor,
             emailFornecedor: item.data().emailFornecedor,
             enderecoFornecedor: item.data().enderecoFornecedor
+
           })
         })
 
@@ -37,7 +39,6 @@ function FornecedorProvider({ children }) {
       {children}
     </FornecedoresContext.Provider>
   )
-
 }
 
 export default FornecedorProvider

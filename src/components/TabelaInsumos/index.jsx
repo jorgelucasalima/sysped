@@ -7,7 +7,7 @@ export function TabelaInsumos(props) {
 
 
   const insumos = useContext(InsumosContext)
-
+  console.log(insumos)
 
   return (
       <Container>
