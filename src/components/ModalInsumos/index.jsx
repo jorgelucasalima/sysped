@@ -32,6 +32,7 @@ export function ModalInsumos(props) {
     })
     .then(() => {
       toast.success('Insumo criado com sucesso!')
+      props.onRequestClose()
     })
     .catch(error => {
       toast.error('Erro ao criar Insumo!')
