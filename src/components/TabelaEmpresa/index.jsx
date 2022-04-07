@@ -1,6 +1,14 @@
 import {Container, Content} from "./styles"
+import { useContext } from "react";
+import { EmpresaContext} from '../../contexts/empresa'
+import { FiEye, FiEdit } from "react-icons/fi";
 
 export function TabelaEmpresa(props) {
+
+
+  const empresa = useContext(EmpresaContext)
+
+
   return(
     <Container>
         <Content>
@@ -21,12 +29,12 @@ export function TabelaEmpresa(props) {
             </thead>
             <tbody>
               
-            {empresas.map( empresa => (
-                  <tr key={empresa.id}>
-                    <td>{empresa.empresa}</td>
-                    <td>{empresa.empresaCnpj}</td>
-                    <td>{empresa.empresaContato}</td>
-                    <td>{empresa.empresaEmail}</td>
+            {empresa.map( empr => (
+                  <tr key={empr.id}>
+                    <td>{empr.empresa}</td>
+                    <td>{empr.cnpjEmpresa}</td>
+                    <td>{empr.contatoEmpresa}</td>
+                    <td>{empr.emailEmpresa}</td>
                     <td>
                       <a><FiEye size={20}/> </a>
                       <a><FiEdit size={20}/> </a>

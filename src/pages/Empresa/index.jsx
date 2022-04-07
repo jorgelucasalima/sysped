@@ -1,30 +1,30 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
-import { TabelaFornecedores } from "../../components/TabelaFornecedores";
+import { TabelaEmpresa } from "../../components/TabelaEmpresa";
 import Modal from 'react-modal'
-import {ModalFornecedores} from '../../components/ModalFornecedores'
+import {ModalEmpresa} from '../../components/ModalEmpresa'
 import { useState } from "react";
-import FornecedorProvider from "../../contexts/fornecedores";
+import EmpresaProvider from "../../contexts/empresa";
 
 
 Modal.setAppElement('#root');
 
-export function Fornecedores() {
+export function Empresa() {
 
-  const [isModalFornecedoresOpen, setIsModalFornecedoresOpen] = useState(false);
+  const [isModalEmpresaOpen, setIsModalEmpresaOpen] = useState(false);
 
-  function modalFornecedoresOpen() {
-    setIsModalFornecedoresOpen(true)
+  function modalEmpresaOpen() {
+    setIsModalEmpresaOpen(true)
   }
 
-  function modalFornecedoresClose() {
-    setIsModalFornecedoresOpen(false)
+  function modalEmpresaClose() {
+    setIsModalEmpresaOpen(false)
   }
 
   return(
-    <FornecedorProvider>
+    <EmpresaProvider>
       <HeaderMenu/>
-      <ModalFornecedores isOpen={isModalFornecedoresOpen} onRequestClose={modalFornecedoresClose}/>
-      <TabelaFornecedores modalFornecedoresOpen={modalFornecedoresOpen} />
-    </FornecedorProvider>
+      <ModalEmpresa isOpen={isModalEmpresaOpen} onRequestClose={modalEmpresaClose}/>
+      <TabelaEmpresa modalEmpresaOpen={modalEmpresaOpen} />
+    </EmpresaProvider>
   )
 }
