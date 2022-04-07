@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 import { FiX } from "react-icons/fi";
 import { useState } from 'react';
 import firebase from '../../services/firebaseConnection'
-
+import { toast } from 'react-toastify';
 
 
 export function ModalEmpresa(props) {
@@ -27,11 +27,10 @@ export function ModalEmpresa(props) {
       emailEmpresa: emailEmpresa,
     })
     .then(() => {
-      console.log("DADOS CADASTRADOS");
-      //implementar o toasty
+      toast.success('Empresa criado com sucesso!')
     })
     .catch(error => {
-      console.error("Error adding document: ", error);
+      toast.error('Erro ao criar Empresa')
     });
   }
 

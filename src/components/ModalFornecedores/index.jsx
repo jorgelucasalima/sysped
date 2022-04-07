@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 import { FiX } from "react-icons/fi";
 import { useState } from 'react';
 import firebase from '../../services/firebaseConnection'
-
+import { toast } from 'react-toastify';
 
 
 export function ModalFornecedores(props) {
@@ -31,11 +31,10 @@ export function ModalFornecedores(props) {
       enderecoFornecedor: enderecoFornecedor
     })
     .then(() => {
-      console.log("DADOS CADASTRADOS");
-      //implementar o toasty
+      toast.success('Fornecedor criado com sucesso!')
     })
     .catch(error => {
-      console.error("Error adding document: ", error);
+      toast.error('Erro ao criar Fornecedor!')
     });
   }
 
