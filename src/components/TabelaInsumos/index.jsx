@@ -1,5 +1,5 @@
 import {Container, Content} from "./styles"
-import { FiEye, FiEdit } from "react-icons/fi";
+import { FiEye, FiEdit, FiTrash } from "react-icons/fi";
 import { useContext } from "react";
 import { InsumosContext } from "../../contexts/insumos";
 
@@ -41,6 +41,7 @@ export function TabelaInsumos(props) {
                     <td>
                       <a><FiEye size={20}/> </a>
                       <a><FiEdit size={20}/> </a>
+                      <a><FiTrash size={20}/> </a>
                     </td>
                   </tr>
                 ))}

@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import { FiEye, FiEdit } from "react-icons/fi";
+import { FiEye, FiEdit, FiTrash } from "react-icons/fi";
 import { useContext } from "react";
 import { PedidosContext } from "../../contexts/pedidos";
 
@@ -33,8 +33,9 @@ export function TabelaPedidos() {
                 <td>{pedido.dataEntregaPedido}</td>
                 <td>{pedido.responsavelPedido}</td>
                 <td>
-                  <a><FiEye size={20}/> </a>
-                  <a><FiEdit size={20}/> </a>
+                  <a><FiEye size={20}/></a>
+                  <a><FiEdit size={20}/></a>
+                  <a><FiTrash size={20}/></a>
                 </td>
               </tr>
             ))}

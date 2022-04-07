@@ -1,5 +1,5 @@
 import {Container, Content} from "./styles"
-import { FiEye, FiEdit } from "react-icons/fi";
+import { FiEye, FiEdit, FiTrash } from "react-icons/fi";
 import { useContext } from "react";
 import { FornecedoresContext} from '../../contexts/fornecedores'
 
@@ -7,7 +7,6 @@ export function TabelaFornecedores(props) {
 
 
   const fornecedores = useContext(FornecedoresContext)
-  console.log(fornecedores)
 
   return (
       <Container>
@@ -42,6 +41,7 @@ export function TabelaFornecedores(props) {
                     <td>
                       <a><FiEye size={20}/> </a>
                       <a><FiEdit size={20}/> </a>
+                      <a><FiTrash size={20}/> </a>
                     </td>
                   </tr>
                 ))
