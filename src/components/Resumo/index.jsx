@@ -2,14 +2,17 @@ import { Container } from "./styles";
 import { FiLayers, FiCheckCircle, FiArchive } from "react-icons/fi";
 import { useContext } from "react";
 import { PedidosContext } from "../../contexts/pedidos";
+import { InsumosContext } from "../../contexts/insumos";
 
 export function Resumo() {
 
   const pedidos = useContext(PedidosContext)
+  const insumos = useContext(InsumosContext)
 
   let quantidadePedidos = pedidos.length;
-  console.log(pedidos)
-
+  let quantidadeInsumos = insumos.length;
+  
+  
 
   return (
     <Container>
@@ -25,7 +28,7 @@ export function Resumo() {
           <p>Insumos</p>
           <FiArchive size={23}/>
         </header>
-        <strong>23</strong>
+        <strong>{quantidadeInsumos}</strong>
       </div>
       <div className="destaque-fundo">
         <header>
