@@ -31,6 +31,12 @@ export function ModalPedidos(props) {
     .then(() => {
       toast.success('Pedido criado com sucesso!')
       props.onRequestClose()
+      setStatusPedido('')
+      setObra('')
+      setDescricaoPedido('')
+      setDataCriacaoPedido('')
+      setDataEntregaPedido('')
+      setResponsavelPedido('')
     })
     .catch(error => {
       toast.error('Erro ao criar pedido!')

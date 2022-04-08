@@ -33,6 +33,12 @@ export function ModalFornecedores(props) {
     .then(() => {
       toast.success('Fornecedor criado com sucesso!')
       props.onRequestClose()
+      setFornecedor('')
+      setCategoriaFornecedor('')
+      setCnpjFornecedor('')
+      setTelefoneFornecedor('')
+      setEmailFornecedor('')
+      setEnderecoFornecedor('')
     })
     .catch(error => {
       toast.error('Erro ao criar Fornecedor!')

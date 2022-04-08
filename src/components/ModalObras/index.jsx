@@ -25,6 +25,8 @@ export function ModalObras(props) {
     .then(() => {
       toast.success('Obra criada com sucesso!')
       props.onRequestClose()
+      setObras('')
+      setResponsavelObras('')
     })
     .catch(error => {
       toast.error('Erro ao criar obra!')

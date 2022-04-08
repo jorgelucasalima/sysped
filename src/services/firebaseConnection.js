@@ -12,6 +12,8 @@ const firebaseConfig = {
   measurementId: "G-0BQ2B7PCED"
 };
 
+//verifica se ja tem uma chamada aberta para firebase
+// se nao tem ele chama
 if(!firebase.apps.length){
   firebase.initializeApp(firebaseConfig);
 }

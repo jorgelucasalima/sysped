@@ -29,6 +29,10 @@ export function ModalEmpresa(props) {
     .then(() => {
       toast.success('Empresa criado com sucesso!')
       props.onRequestClose()
+      setEmpresa('')
+      setCnpjEmpresa('')
+      setContatoEmpresa('')
+      setEmailEmpresa('')
     })
     .catch(error => {
       toast.error('Erro ao criar Empresa')
