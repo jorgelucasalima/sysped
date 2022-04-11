@@ -33,7 +33,7 @@ export function TabelaObras(props) {
                     <td>
                       <a><FiEye size={20}/> </a>
                       <a><FiEdit size={20}/> </a>
-                      <a><FiTrash size={20}/> </a>
+                      <a><FiTrash size={20} onClick={props.modalExcluirObrasOpen} /> </a>
                     </td>
                   </tr>
                 ))}
