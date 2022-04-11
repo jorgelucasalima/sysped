@@ -1,27 +1,27 @@
 import {Container} from './styles'
 import Modal from 'react-modal'
 import { FiX } from "react-icons/fi";
-import { useState } from 'react';
 import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
-
+import { useContext } from 'react';
+import { ObrasContext } from '../../contexts/obras';
 
 export function ModalExcluirObra(props) {
   
+  const Obras = useContext(ObrasContext)
 
   //função de excluir obra
-  async function Excluir0bra(id) {
+  async function Excluir0bra() {
     await firebase.firestore().collection('obras')
-    .doc(id)
+    .doc()
     .delete()
     .then(() => {
-      toast.success('Obra excluído com sucesso!')
+      toast.success('Obra excluída com sucesso!')
       props.onRequestClose()
     })
     .catch(error => {
       toast.error('Erro ao excluir Obra')
     });
-    
   }
 
 
@@ -33,18 +33,9 @@ export function ModalExcluirObra(props) {
       className="react-modal-content"
     >
       <Container>
-        <button
-          type='button'
-          onClick={props.onRequestClose}
-          className='react-modal-close'
-        >
-          <FiX/>
-        </button>
-
-        <h2>Excluir Obra</h2>
-        
-        <button onClick={props.onRequestClose}>Cancelar</button>
-        <button onClick={Excluir0bra}>Excluir</button>
+        <h2>Tem certeza que deseja excluir a obra?</h2>
+        <button className='btn-cancelar' onClick={props.onRequestClose}>Cancelar</button>
+        <button className='btn-excluir' >Excluir</button>
       </Container>
     </Modal>
   )

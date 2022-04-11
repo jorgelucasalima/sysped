@@ -7,8 +7,7 @@ export function TabelaObras(props) {
 
 
   const obras = useContext(ObrasContext)
-  console.log(obras)
-
+  
   return (
       <Container>
         <Content>
