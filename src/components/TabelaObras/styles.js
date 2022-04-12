@@ -30,15 +30,6 @@ export const Container = styled.div`
         margin-left: 1rem;
         cursor: pointer;
       }
-
-      button{
-        margin: 0;
-        border: 0;
-        margin-left: 1rem;
-        background: var(--branco);
-        color: var(--texto-body);
-      }
-
     }
   }
 `;
