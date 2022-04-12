@@ -2,11 +2,13 @@ import {Container, Content} from "./styles"
 import { FiEye, FiEdit, FiTrash } from "react-icons/fi";
 import { useContext } from "react";
 import { ObrasContext } from "../../contexts/obras";
+import firebase from '../../services/firebaseConnection'
+import { toast } from 'react-toastify';
 
 export function TabelaObras(props) {
 
-
   const obras = useContext(ObrasContext)
+
   
   return (
       <Container>
