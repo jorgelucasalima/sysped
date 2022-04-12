@@ -31,6 +31,14 @@ export const Container = styled.div`
         cursor: pointer;
       }
 
+      button{
+        margin: 0;
+        border: 0;
+        margin-left: 1rem;
+        background: var(--branco);
+        color: var(--texto-body);
+      }
+
     }
   }
 `;

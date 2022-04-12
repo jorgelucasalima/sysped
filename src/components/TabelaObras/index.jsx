@@ -9,6 +9,19 @@ export function TabelaObras(props) {
 
   const obras = useContext(ObrasContext)
 
+  async function excluir0bra(id) {
+    await firebase.firestore().collection('obras')
+    .doc(id)
+    .delete()
+    .then(() => {
+      toast.success('Obra excluída com sucesso!')
+      props.onRequestClose()
+    })
+    .catch(error => {
+      toast.error('Erro ao excluir Obra')
+    });
+  }
+
   
   return (
       <Container>
@@ -32,9 +45,9 @@ export function TabelaObras(props) {
                     <td>{obra.obras}</td>
                     <td>{obra.responsavelObras}</td>
                     <td>
-                      <a><FiEye size={20}/> </a>
-                      <a><FiEdit size={20}/> </a>
-                      <a><FiTrash size={20} onClick={props.modalExcluirObrasOpen} /> </a>
+                      <button> <FiEye size={20}/> </button>
+                      <button> <FiEdit size={20}/> </button>
+                      <button onClick={() => excluir0bra(obra.id)}> <FiTrash size={20}/></button>
                     </td>
                   </tr>
                 ))}
