@@ -13,6 +13,7 @@ export function Obras() {
 
   //estados
   const [isModalObrasOpen, setIsModalObrasOpen] = useState(false);
+  
 
   //função modal de cadastro de obras
   function modalObrasOpen() {
@@ -23,6 +24,7 @@ export function Obras() {
     setIsModalObrasOpen(false)
   }
 
+  
   return(
     <ObraProvider>
       <HeaderMenu/>
