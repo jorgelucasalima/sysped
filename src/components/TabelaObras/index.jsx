@@ -5,8 +5,6 @@ import { ObrasContext } from "../../contexts/obras";
 import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
 import { ModalEditarObra } from "../ModalEditarObra";
-import { async } from "@firebase/util";
-
 
 
 export function TabelaObras(props) {
@@ -15,8 +13,7 @@ export function TabelaObras(props) {
 
   //estados
   const [isModalEditarObrasOpen, setIsModalEditarObrasOpen] = useState(false);
-
-
+  
   //função modal de edição de obras
   function modalEditarObrasOpen(id) {
     setIsModalEditarObrasOpen(true)
@@ -25,7 +22,6 @@ export function TabelaObras(props) {
   function modalEditarObrasClose() {
     setIsModalEditarObrasOpen(false)
   }
-  
   //função de deletar obra
   async function Excluir0bra(id) {
     await firebase.firestore().collection('obras')
@@ -39,28 +35,14 @@ export function TabelaObras(props) {
     });
   }
 
-  //função de excluir obra
-  async function EditarObra(id) {
-    await firebase.firestore().collection('obras')
-    .add(id)
-    .update()
-    .then(() => {
-      toast.success('Obra editada com sucesso!')
-    })
-    .catch(error => {
-      toast.error('Erro ao editar obra!')
-    });
-  }
  
-  
   return (
       <Container>
-        <ModalEditarObra isOpen={isModalEditarObrasOpen} onRequestClose={modalEditarObrasClose} />
+        <ModalEditarObra isOpen={isModalEditarObrasOpen} onRequestClose={modalEditarObrasClose}/>
         <Content>
           <a href=""></a>
           <button type='button' onClick={props.modalObrasOpen}>Cadastrar Obras</button>
         </Content>
-
         <div>
           <table>
             <thead>

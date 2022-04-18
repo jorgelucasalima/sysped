@@ -12,8 +12,8 @@ export function ModalEditarObra(props) {
   const [obras, setObras] = useState('')
   const [responsavelObras, setResponsavelObras] = useState('')
   
-/*
-   //função de criar insumo
+
+  //função de editar obra
    async function EditarObra(id) {
     await firebase.firestore().collection('obras')
     .doc(props.id)
@@ -31,7 +31,7 @@ export function ModalEditarObra(props) {
       toast.error('Erro ao editar obra!')
     });
   }
-*/
+
 
   return (
     <Modal
@@ -40,7 +40,7 @@ export function ModalEditarObra(props) {
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
-      <Container onSubmit={ () => { }}>
+      <Container onSubmit={()=>{}}>
         <button
           type='button'
           onClick={props.onRequestClose}
