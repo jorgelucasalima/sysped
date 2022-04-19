@@ -33,7 +33,7 @@ export const Container = styled.form`
   }
 
   button[type="submit"] {
-    width: 40%;
+    width: 50%;
     padding: 0 1.5rem;
     height: 4rem;
     background: var(--verde);
@@ -59,7 +59,8 @@ export const Container = styled.form`
     border: 0;
     font-size: 1.5rem;
     margin-top: 1.5rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 1.5rem;
     
     transition:filter 0.2s;
     &:hover {
@@ -70,6 +71,6 @@ export const Container = styled.form`
   a{
     text-decoration: none;
   }
-
  
 `
+// criar um content button e ajeitar buttoes
