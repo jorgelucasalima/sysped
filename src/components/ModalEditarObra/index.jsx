@@ -40,7 +40,7 @@ export function ModalEditarObra(props) {
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
-      <Container onSubmit={()=>{}}>
+      <Container>
         <button
           type='button'
           onClick={props.onRequestClose}

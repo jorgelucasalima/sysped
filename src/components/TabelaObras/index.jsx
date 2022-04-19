@@ -5,6 +5,7 @@ import { ObrasContext } from "../../contexts/obras";
 import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
 import { ModalEditarObra } from "../ModalEditarObra";
+import { ModalVisualizarObra } from "../ModalVisualizarObra";
 
 
 export function TabelaObras(props) {
@@ -13,6 +14,7 @@ export function TabelaObras(props) {
 
   //estados
   const [isModalEditarObrasOpen, setIsModalEditarObrasOpen] = useState(false);
+  const [isModalVisualizarObraOpen, setIsModalVisualizarObraOpen] = useState(false);
   
   //função modal de edição de obras
   function modalEditarObrasOpen(id) {
@@ -22,6 +24,18 @@ export function TabelaObras(props) {
   function modalEditarObrasClose() {
     setIsModalEditarObrasOpen(false)
   }
+
+  //função modal de visualização de obras
+  function modalVisualizarObraOpen(id) {
+    setIsModalVisualizarObraOpen(true)
+  }
+
+  function modalVisualizarObraClose() {
+    setIsModalVisualizarObraOpen(false)
+  }
+
+
+
   //função de deletar obra
   async function Excluir0bra(id) {
     await firebase.firestore().collection('obras')
@@ -39,6 +53,7 @@ export function TabelaObras(props) {
   return (
       <Container>
         <ModalEditarObra isOpen={isModalEditarObrasOpen} onRequestClose={modalEditarObrasClose}/>
+        <ModalVisualizarObra isOpen={isModalVisualizarObraOpen} onRequestClose={modalVisualizarObraClose}/>
         <Content>
           <a href=""></a>
           <button type='button' onClick={props.modalObrasOpen}>Cadastrar Obras</button>
@@ -58,8 +73,8 @@ export function TabelaObras(props) {
                     <td>{obra.obras}</td>
                     <td>{obra.responsavelObras}</td>
                     <td>
-                      <a> <FiEye size={20}/> </a>
-                      <a onClick={modalEditarObrasOpen}> <FiEdit size={20}/> </a>
+                      <a onClick={modalVisualizarObraOpen}> <FiEye size={20}/> </a>
+                      <a onClick={modalEditarObrasOpen} > <FiEdit size={20}/> </a>
                       <a onClick={() => Excluir0bra(obra.id)}> <FiTrash size={20}/></a>
                     </td>
                   </tr>
