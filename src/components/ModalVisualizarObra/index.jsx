@@ -9,7 +9,6 @@ import { ObrasContext } from "../../contexts/obras";
 
 export function ModalVisualizarObra(props) {
   
-  const obras = useContext(ObrasContext)
 
 
   return (
@@ -29,6 +28,8 @@ export function ModalVisualizarObra(props) {
         </button>
 
         <h2>Obra</h2>
+        
+
         
       </Container>
     </Modal>
