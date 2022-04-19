@@ -1,12 +1,12 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 import { useState } from 'react';
 import firebase from '../../services/firebaseConnection'
+import { toast } from 'react-toastify';
+import { Container } from "./styles";
 
-
-
-export function EditarObra(event) {
+export function EditarObra() {
 
   const { id } = useParams();
   console.log(id);
@@ -14,7 +14,8 @@ export function EditarObra(event) {
   const [obras, setObras] = useState('')
   const [responsavelObras, setResponsavelObras] = useState('')
 
-  async function editarObra() {
+  async function editarObra(event) {
+    event.preventDefault()
     await firebase.firestore().collection('obras')
     .doc(id)
     .update({
@@ -22,30 +23,37 @@ export function EditarObra(event) {
       responsavelObras: responsavelObras,
     })
     .then(() => {
-      console.log('Document successfully updated!');
+      toast.success('Obra editada com sucesso!')
 
     })
-    .catch(error => {})
+    .catch(error => {
+      toast.error('Erro ao criar obra!')
+    })
   }
 
   return(
     <>
       <HeaderMenu/>
-      <h1>Editar Obra</h1>
-      <input 
-          placeholder='Obra'
-          type="text" 
-          value={obras} 
-          onChange={(event) => setObras(event.target.value)}
-        />
+      <Container>
+        <h1>Editar Obra</h1>
         <input 
-          placeholder='Responsável pela Obra'
-          type="text" 
-          value={responsavelObras} 
-          onChange={(event) => setResponsavelObras(event.target.value)}
-        />
-        <button type='submit' onClick={editarObra}>Salvar</button>
-
+            placeholder='Obra'
+            type="text" 
+            value={obras} 
+            onChange={(event) => setObras(event.target.value)}
+          />
+          <input 
+            placeholder='Responsável pela Obra'
+            type="text" 
+            value={responsavelObras} 
+            onChange={(event) => setResponsavelObras(event.target.value)}
+          />
+          <button>
+          <Link to="/obras">Voltar</Link>
+          </button>
+          
+          <button type='submit' onClick={editarObra}>Salvar</button>
+      </Container>
     </>
   )
 }
