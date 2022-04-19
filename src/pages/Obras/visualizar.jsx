@@ -1,17 +1,22 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
 import {useParams} from 'react-router-dom';
+import { VisualizarObra } from "../../components/VisualizarObra";
+import { useEffect, useState } from "react";
 
 
 
-export function VisualizarObra() {
+export function VisualizarObra_() {
 
   const { id } = useParams();
-  console.log(id);
 
-  return(
+  const [obra, setObra] = useState();
+
+
+
+  return (
     <>
-      <HeaderMenu/>
-      <p>visualizar</p>
+      <HeaderMenu />
+      <VisualizarObra obra={obra} />
     </>
-  )
+  );
 }

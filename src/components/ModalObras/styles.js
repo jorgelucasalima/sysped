@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.form`
   
-  h2{
+  h2 {
     color: var(--texto-title);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
