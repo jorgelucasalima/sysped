@@ -6,6 +6,8 @@ import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
 import { ModalEditarObra } from "../ModalEditarObra";
 import { ModalVisualizarObra } from "../ModalVisualizarObra";
+import { Link } from 'react-router-dom'
+
 
 
 export function TabelaObras(props) {
@@ -52,7 +54,7 @@ export function TabelaObras(props) {
  
   return (
       <Container>
-        <ModalEditarObra isOpen={isModalEditarObrasOpen} onRequestClose={modalEditarObrasClose}/>
+        <ModalEditarObra isOpen={isModalEditarObrasOpen} onRequestClose={modalEditarObrasClose} />
         <ModalVisualizarObra isOpen={isModalVisualizarObraOpen} onRequestClose={modalVisualizarObraClose}/>
         <Content>
           <a href=""></a>
@@ -74,7 +76,7 @@ export function TabelaObras(props) {
                     <td>{obra.responsavelObras}</td>
                     <td>
                       <a onClick={modalVisualizarObraOpen}> <FiEye size={20}/> </a>
-                      <a onClick={modalEditarObrasOpen} > <FiEdit size={20}/> </a>
+                      <Link to={`/editarobra/${obra.id}`} > <FiEdit size={20}/> </Link>
                       <a onClick={() => Excluir0bra(obra.id)}> <FiTrash size={20}/></a>
                     </td>
                   </tr>

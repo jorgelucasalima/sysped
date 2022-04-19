@@ -5,6 +5,7 @@ import { Pedidos } from './pages/Pedidos'
 import { Fornecedores } from './pages/Fornecedores'
 import { Obras } from './pages/Obras'
 import { Empresa } from './pages/Empresa'
+import { EditarObra } from './pages/Obras/editar'
 
 
 export default function Rotas() {
@@ -15,6 +16,7 @@ export default function Rotas() {
         <Route path="/fornecedores" element={<Fornecedores/>} />
         <Route path="/obras" element={<Obras/>} />
         <Route path="/empresa" element={<Empresa/>} />
+        <Route path="/editarobra/:id" element={<EditarObra/>} />
     </Routes>
   )
 }
