@@ -4,7 +4,6 @@ import { useContext, useState } from "react";
 import { ObrasContext } from "../../contexts/obras";
 import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
-import { ModalEditarObra } from "../ModalEditarObra";
 import { ModalVisualizarObra } from "../ModalVisualizarObra";
 import { Link } from 'react-router-dom'
 
@@ -54,8 +53,6 @@ export function TabelaObras(props) {
  
   return (
       <Container>
-        <ModalEditarObra isOpen={isModalEditarObrasOpen} onRequestClose={modalEditarObrasClose} />
-        <ModalVisualizarObra isOpen={isModalVisualizarObraOpen} onRequestClose={modalVisualizarObraClose}/>
         <Content>
           <a href=""></a>
           <button type='button' onClick={props.modalObrasOpen}>Cadastrar Obras</button>
@@ -75,8 +72,8 @@ export function TabelaObras(props) {
                     <td>{obra.obras}</td>
                     <td>{obra.responsavelObras}</td>
                     <td>
-                      <Link to={`/visualizarobra/${obra.id}`}> <FiEye size={20}/> </Link>
-                      <Link to={`/editarobra/${obra.id}`} > <FiEdit size={20}/> </Link>
+                      <Link to={`/visualizar_obra/${obra.id}`}> <FiEye size={20}/> </Link>
+                      <Link to={`/editar_obra/${obra.id}`} > <FiEdit size={20}/> </Link>
                       <a onClick={() => Excluir0bra(obra.id)}> <FiTrash size={20}/></a>
                     </td>
                   </tr>

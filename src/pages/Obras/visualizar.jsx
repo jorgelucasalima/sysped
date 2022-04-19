@@ -1,11 +1,10 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
 import {useParams} from 'react-router-dom';
-import { VisualizarObra } from "../../components/VisualizarObra";
 import { useEffect, useState } from "react";
 
 
 
-export function VisualizarObra_() {
+export function VisualizarObra() {
 
   const { id } = useParams();
 
@@ -16,7 +15,7 @@ export function VisualizarObra_() {
   return (
     <>
       <HeaderMenu />
-      <VisualizarObra obra={obra} />
+      
     </>
   );
 }

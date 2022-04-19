@@ -6,7 +6,7 @@ import { Fornecedores } from './pages/Fornecedores'
 import { Obras } from './pages/Obras'
 import { Empresa } from './pages/Empresa'
 import { EditarObra } from './pages/Obras/editar'
-import { VisualizarObra, VisualizarObra_ } from './pages/Obras/visualizar'
+import { VisualizarObra } from './pages/Obras/visualizar'
 
 
 export default function Rotas() {
@@ -17,8 +17,8 @@ export default function Rotas() {
         <Route path="/insumos" element={<Insumos/>} />
         <Route path="/fornecedores" element={<Fornecedores/>} />
         <Route path="/obras" element={<Obras/>} />
-        <Route path="/editarobra/:id" element={<EditarObra/>} />
-        <Route path="/visualizarobra/:id" element={<VisualizarObra_/>} />
+        <Route path="/editar_obra/:id" element={<EditarObra/>} />
+        <Route path="/visualizar_obra/:id" element={<VisualizarObra/>} />
     </Routes>
   )
 }
