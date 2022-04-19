@@ -75,7 +75,7 @@ export function TabelaObras(props) {
                     <td>{obra.obras}</td>
                     <td>{obra.responsavelObras}</td>
                     <td>
-                      <a onClick={modalVisualizarObraOpen}> <FiEye size={20}/> </a>
+                      <Link to={`/visualizarobra/${obra.id}`}> <FiEye size={20}/> </Link>
                       <Link to={`/editarobra/${obra.id}`} > <FiEdit size={20}/> </Link>
                       <a onClick={() => Excluir0bra(obra.id)}> <FiTrash size={20}/></a>
                     </td>

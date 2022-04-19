@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 
 
 
-export function EditarObra() {
+export function VisualizarObra() {
 
   const { id } = useParams();
   console.log(id);
@@ -11,7 +11,7 @@ export function EditarObra() {
   return(
     <>
       <HeaderMenu/>
-      <p>ss</p>
+      <p>visualizar</p>
     </>
   )
 }
