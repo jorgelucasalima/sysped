@@ -27,8 +27,10 @@ export const Container = styled.div`
       text-align: center;
 
       a {
+        text-decoration: none;
         margin-left: 1rem;
         cursor: pointer;
+        color: var(--texto-body);
       }
     }
   }

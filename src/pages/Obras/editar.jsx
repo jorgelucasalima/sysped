@@ -8,8 +8,8 @@ import { Container } from "./styles";
 
 export function EditarObra() {
 
+  //pegando id da url
   const { id } = useParams();
-  console.log(id);
 
   const [obras, setObras] = useState('')
   const [responsavelObras, setResponsavelObras] = useState('')
@@ -24,7 +24,6 @@ export function EditarObra() {
     })
     .then(() => {
       toast.success('Obra editada com sucesso!')
-
     })
     .catch(error => {
       toast.error('Erro ao criar obra!')
