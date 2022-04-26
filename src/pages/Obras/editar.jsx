@@ -24,6 +24,11 @@ export function EditarObra() {
     })
     .then(() => {
       toast.success('Obra editada com sucesso!')
+       
+      //redirecionar para pagina de obras
+      setTimeout(() => {
+        window.location.href = '/obras'
+      }, 1000)
     })
     .catch(error => {
       toast.error('Erro ao criar obra!')
