@@ -19,6 +19,8 @@ export function VisualizarObra() {
     <>
       <HeaderMenu />
       <Container>
+
+    
         <h1>Obra:</h1>
         <h2></h2>
         <h1>Responsável:</h1>
