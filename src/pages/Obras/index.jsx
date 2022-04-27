@@ -6,6 +6,7 @@ import { useState } from "react";
 import ObraProvider from "../../contexts/obras";
 
 
+
 Modal.setAppElement('#root');
 
 
@@ -13,7 +14,7 @@ export function Obras() {
 
   //estados
   const [isModalObrasOpen, setIsModalObrasOpen] = useState(false);
-  
+
 
   //função modal de cadastro de obras
   function modalObrasOpen() {
@@ -24,12 +25,13 @@ export function Obras() {
     setIsModalObrasOpen(false)
   }
 
+
   
   return(
     <ObraProvider>
       <HeaderMenu/>
       <ModalObras isOpen={isModalObrasOpen} onRequestClose={modalObrasClose}/>
-      <TabelaObras modalObrasOpen={modalObrasOpen} />
+      <TabelaObras modalObrasOpen={modalObrasOpen}/>
     </ObraProvider>
   )
 }

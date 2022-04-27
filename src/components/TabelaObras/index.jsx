@@ -4,9 +4,7 @@ import { useContext, useState } from "react";
 import { ObrasContext } from "../../contexts/obras";
 import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
-import { ModalVisualizarObra } from "../ModalVisualizarObra";
 import { Link } from 'react-router-dom'
-
 
 
 export function TabelaObras(props) {
