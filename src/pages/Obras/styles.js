@@ -9,10 +9,16 @@ export const Container = styled.form`
   margin-top: 3rem;
   margin-bottom: 1rem;
   
-  h1, h2 {
+  h1 {
     color: var(--texto-title);
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    color: var(--texto-title);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   input {

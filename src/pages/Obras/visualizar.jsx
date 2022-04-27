@@ -11,14 +11,16 @@ export function VisualizarObra() {
 
   const [obra, setObra] = useState();
   const [responsavelObras, setResponsavelObras] = useState('')
-
+  console.log(obra)
+  console.log(id)
+  
 
   return (
     <>
       <HeaderMenu />
       <Container>
         <h1>Obra:</h1>
-        <h2>Mano</h2>
+        <h2></h2>
         <h1>Responsável:</h1>
         <h2>Mano</h2>
       </Container>

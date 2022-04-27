@@ -13,29 +13,6 @@ export function TabelaObras(props) {
 
   const obras = useContext(ObrasContext)
 
-  //estados
-  const [isModalEditarObrasOpen, setIsModalEditarObrasOpen] = useState(false);
-  const [isModalVisualizarObraOpen, setIsModalVisualizarObraOpen] = useState(false);
-  
-  //função modal de edição de obras
-  function modalEditarObrasOpen(id) {
-    setIsModalEditarObrasOpen(true)
-  }
-
-  function modalEditarObrasClose() {
-    setIsModalEditarObrasOpen(false)
-  }
-
-  //função modal de visualização de obras
-  function modalVisualizarObraOpen(id) {
-    setIsModalVisualizarObraOpen(true)
-  }
-
-  function modalVisualizarObraClose() {
-    setIsModalVisualizarObraOpen(false)
-  }
-
-
 
   //função de deletar obra
   async function Excluir0bra(id) {

@@ -14,8 +14,8 @@ export function EditarObra() {
   const [obras, setObras] = useState('')
   const [responsavelObras, setResponsavelObras] = useState('')
 
-  async function editarObra(event) {
-    event.preventDefault()
+  async function editarObra() {
+    
     await firebase.firestore().collection('obras')
     .doc(id)
     .update({
