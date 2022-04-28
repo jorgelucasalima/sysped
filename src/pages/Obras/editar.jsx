@@ -1,7 +1,7 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
 import {Link, useParams } from 'react-router-dom';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
 import { Container } from "./styles";
@@ -14,6 +14,7 @@ export function EditarObra() {
   const [obras, setObras] = useState('')
   const [responsavelObras, setResponsavelObras] = useState('')
 
+  
   async function editarObra(event) {
     event.preventDefault()
     
@@ -27,6 +28,7 @@ export function EditarObra() {
       toast.success('Obra editada com sucesso!')
        
       //redirecionar para pagina de obras
+      //implementar rota para obras com reacte-router-dom
       setTimeout(() => {
         window.location.href = '/obras'
       }, 1000)
