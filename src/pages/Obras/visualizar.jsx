@@ -8,14 +8,14 @@ import firebase from '../../services/firebaseConnection'
 
 export function VisualizarObra() {
 
+  //pegando id da url
   const { id } = useParams();
 
   const [obra, setObra] = useState({});
-  console.log(obra)
 
-
+  //carregar obra do id da url
   useEffect(() => {
-    async function loadObra() {
+    async function visualizarObra() {
       await firebase.firestore().collection(`obras`)
       .doc(id)
       .get({
@@ -29,7 +29,7 @@ export function VisualizarObra() {
         console.log(error)
       })
     }
-    loadObra();
+    visualizarObra();
   }, [id]);
 
 
@@ -42,7 +42,6 @@ export function VisualizarObra() {
         <h1>Responsável:</h1>
         <h2>{obra.responsavelObras}</h2>
       </Container>
-      
     </>
   );
 }
