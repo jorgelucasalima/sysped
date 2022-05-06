@@ -1,11 +1,12 @@
 import { createContext, useState, useEffect } from "react";
 import firebase from "../services/firebaseConnection"
 
-export const ObrasContext = createContext([])
 
+export const ObrasContext = createContext([])
 
 function ObraProvider({ children }) {
   const [obras, setObras] = useState([])
+
 
   useEffect(() => {
     async function loadObras() {
@@ -29,7 +30,7 @@ function ObraProvider({ children }) {
   }, [])
 
   return (
-    <ObrasContext.Provider value={obras}>
+    <ObrasContext.Provider value={{obras}}>
       {children}
     </ObrasContext.Provider>
   )

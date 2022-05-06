@@ -2,32 +2,31 @@ import {Container, Content} from "./styles"
 import { FiEye, FiEdit, FiTrash } from "react-icons/fi";
 import { useContext, useState } from "react";
 import { ObrasContext } from "../../contexts/obras";
-import firebase from '../../services/firebaseConnection'
-import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom'
+import { ModalExcluir } from "../ModalExcluir";
 
 
 export function TabelaObras(props) {
 
-  const obras = useContext(ObrasContext)
+  const {obras} = useContext(ObrasContext)
+  const [isModalExcluirOpen, setIsModalExcluirOpen] = useState(false)
+  const [obraId, setObraId] = useState('')
 
-
-  //função de deletar obra
-  async function Excluir0bra(id) {
-    await firebase.firestore().collection('obras')
-    .doc(id)
-    .delete()
-    .then(() => {
-      toast.success('Obra excluída com sucesso!')
-    })
-    .catch(error => {
-      toast.error('Erro ao excluir Obra')
-    });
+  //função modal de excluir
+  function modalExcluirOpen(id) {
+    setObraId(id)
+    setIsModalExcluirOpen(true)
   }
 
- 
+  function modalExcluirClose() {
+    setIsModalExcluirOpen(false)
+  }
+  
+
   return (
       <Container>
+        <ModalExcluir isOpen={isModalExcluirOpen} onRequestClose={modalExcluirClose} obraId={obraId}/>
+      
         <Content>
           <a href=""></a>
           <button type='button' onClick={props.modalObrasOpen}>Cadastrar Obras</button>
@@ -49,7 +48,7 @@ export function TabelaObras(props) {
                     <td>
                       <Link to={`/visualizar_obra/${obra.id}`}> <FiEye size={20}/> </Link>
                       <Link to={`/editar_obra/${obra.id}`} > <FiEdit size={20}/> </Link>
-                      <a onClick={() => Excluir0bra(obra.id)}> <FiTrash size={20}/></a>
+                      <a onClick={() => modalExcluirOpen(obra.id)}> <FiTrash size={20}/></a>
                     </td>
                   </tr>
                 ))}

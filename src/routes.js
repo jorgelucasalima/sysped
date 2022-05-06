@@ -7,6 +7,7 @@ import { Obras } from './pages/Obras'
 import { Empresa } from './pages/Empresa'
 import { EditarObra } from './pages/Obras/editar'
 import { VisualizarObra } from './pages/Obras/visualizar'
+import { ModalExcluir } from './components/ModalExcluir'
 
 
 export default function Rotas() {
