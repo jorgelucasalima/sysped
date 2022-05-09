@@ -10,7 +10,7 @@ export const Container = styled.form`
   }
 
   button {
-    width: 100%;
+    //width: 40%;
     padding: 0 1.5rem;
     height: 4rem;
     background: var(--verde);
@@ -26,16 +26,16 @@ export const Container = styled.form`
     }
   }
 
-  .react-modal-close {
-    position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
-    border: 0;
-    background: transparent;
-    transition:filter 0.2s;
-    &:hover {
-      filter: brightness(0.8);
-    }
+  .btn-nao {
+    background: var(--verde);
+    width: 40%;
+    margin-left: 2.5rem;
+  }
+
+  .btn-sim{
+    width: 40%;
+    margin-left: 1rem;
+    background: var(--vermelho);
   }
 
 

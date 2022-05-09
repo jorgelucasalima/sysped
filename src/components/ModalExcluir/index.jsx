@@ -24,17 +24,9 @@ export function ModalExcluir(props) {
       className="react-modal-content"
     >
       <Container >
-        <button
-          type='button'
-          onClick={props.onRequestClose}
-          className='react-modal-close'
-        >
-          <FiX/>
-        </button>
-
         <h2>Deseja realmente excluir?</h2>
-        <button >Não</button>
-        <button onClick={() => Excluir0bra(props.obraId)} >Sim</button>
+        <button className='btn-nao'>Não</button>
+        <button onClick={() => Excluir0bra(props.obraId)} className='btn-sim'>Sim</button>
       </Container>
     </Modal>
   )
