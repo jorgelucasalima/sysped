@@ -3,7 +3,7 @@ import { FiEye, FiEdit, FiTrash } from "react-icons/fi";
 import { useContext, useState } from "react";
 import { ObrasContext } from "../../contexts/obras";
 import { Link } from 'react-router-dom'
-import { ModalExcluir } from "../ModalExcluir";
+import { ModalExcluirObra } from "../ModalExcluirObra";
 
 
 export function TabelaObras(props) {
@@ -25,7 +25,7 @@ export function TabelaObras(props) {
 
   return (
       <Container>
-        <ModalExcluir isOpen={isModalExcluirOpen} onRequestClose={modalExcluirClose} obraId={obraId}/>
+        <ModalExcluirObra isOpen={isModalExcluirOpen} onRequestClose={modalExcluirClose} obraId={obraId}/>
       
         <Content>
           <a href=""></a>

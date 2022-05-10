@@ -4,7 +4,7 @@ import { FiX } from "react-icons/fi";
 import firebase from '../../services/firebaseConnection'
 
 
-export function ModalExcluir(props) {
+export function ModalExcluirObra(props) {
 
   async function Excluir0bra(obraId) {
     try {
