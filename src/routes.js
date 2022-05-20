@@ -7,6 +7,7 @@ import { Obras } from './pages/Obras'
 import { Empresa } from './pages/Empresa'
 import { EditarObra } from './pages/Obras/editar'
 import { VisualizarObra } from './pages/Obras/visualizar'
+import { VisualizarFornecedor } from './pages/Fornecedores/visualizar'
 
 
 export default function Rotas() {
@@ -19,6 +20,7 @@ export default function Rotas() {
         <Route path="/obras" element={<Obras/>} />
         <Route path="/editar_obra/:id" element={<EditarObra/>} />
         <Route path="/visualizar_obra/:id" element={<VisualizarObra/>} />
+        <Route path="/visualizar_fornecedor/:id" element={<VisualizarFornecedor/>} />
     </Routes>
   )
 }

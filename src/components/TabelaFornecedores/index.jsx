@@ -2,6 +2,7 @@ import {Container, Content} from "./styles"
 import { FiEye, FiEdit, FiTrash } from "react-icons/fi";
 import { useContext } from "react";
 import { FornecedoresContext} from '../../contexts/fornecedores'
+import { Link } from 'react-router-dom'
 
 export function TabelaFornecedores(props) {
 
@@ -39,7 +40,7 @@ export function TabelaFornecedores(props) {
                     <td>{fornecedor.emailFornecedor}</td>
                     <td>{fornecedor.enderecoFornecedor}</td>
                     <td>
-                      <a><FiEye size={20}/> </a>
+                      <Link to={`/visualizar_fornecedor/${fornecedor.id}`}><FiEye size={20}/> </Link>
                       <a><FiEdit size={20}/> </a>
                       <a><FiTrash size={20}/> </a>
                     </td>
