@@ -38,6 +38,19 @@ export const Container = styled.form`
     }
   }
 
+  select {
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d7d7d7;
+    background: #e7e9ee;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
   button[type="submit"] {
     width: 50%;
     padding: 0 1.5rem;

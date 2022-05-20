@@ -1,7 +1,7 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
 import {Link, useParams } from 'react-router-dom';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import firebase from '../../services/firebaseConnection'
 import { toast } from 'react-toastify';
 import { Container } from "./styles";

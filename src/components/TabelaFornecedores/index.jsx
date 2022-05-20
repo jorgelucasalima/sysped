@@ -41,7 +41,7 @@ export function TabelaFornecedores(props) {
                     <td>{fornecedor.enderecoFornecedor}</td>
                     <td>
                       <Link to={`/visualizar_fornecedor/${fornecedor.id}`}><FiEye size={20}/> </Link>
-                      <a><FiEdit size={20}/> </a>
+                      <Link to={`/editar_fornecedor/${fornecedor.id}`}><FiEdit size={20}/> </Link>
                       <a><FiTrash size={20}/> </a>
                     </td>
                   </tr>
