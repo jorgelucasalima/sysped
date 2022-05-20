@@ -77,6 +77,31 @@ export const Container = styled.form`
   a{
     text-decoration: none;
   }
- 
+
 `
-// criar um content button e ajeitar buttoes
+//estilização do visualizador de obra
+export const ContainerVisualizarObra = styled.div`
+
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.25rem 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+
+  div {
+    background: var(--azul);
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    color: var(--fundo);
+
+    strong {
+      display: block;
+      margin-top: 1rem;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 3rem;
+    }
+    
+  }
+
+`

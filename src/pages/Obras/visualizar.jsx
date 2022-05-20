@@ -1,8 +1,9 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
 import {useParams} from 'react-router-dom';
 import { useEffect, useState } from "react";
-import { Container } from "./styles";
+import { ContainerVisualizarObra } from "./styles";
 import firebase from '../../services/firebaseConnection'
+
 
 
 
@@ -36,12 +37,14 @@ export function VisualizarObra() {
   return (
     <>
       <HeaderMenu />
-      <Container>
-        <h1>Obra:</h1>
-        <h2>{obra.obras}</h2>
-        <h1>Responsável:</h1>
-        <h2>{obra.responsavelObras}</h2>
-      </Container>
+      <ContainerVisualizarObra>
+        <div>
+          <h1>Obra:</h1>
+          <h2>{obra.obras}</h2>
+          <h1>Responsável:</h1>
+          <h2>{obra.responsavelObras}</h2>
+        </div>
+      </ContainerVisualizarObra>
     </>
   );
 }

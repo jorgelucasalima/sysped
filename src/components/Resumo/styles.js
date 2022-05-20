@@ -12,7 +12,6 @@ export const Container = styled.div`
     border-radius: 0.25rem;
     color: var(--texto-title);
  
-
     header {
       display: flex;
       align-items: center;
