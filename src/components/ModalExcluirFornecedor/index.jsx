@@ -3,12 +3,12 @@ import Modal from 'react-modal'
 import firebase from '../../services/firebaseConnection'
 
 
-export function ModalExcluirObra(props) {
+export function ModalExcluirFornecedor(props) {
 
-  async function Excluir0bra(obraId) {
+  async function ExcluirFornecedor(FornecedorId) {
     try {
-      await firebase.firestore().collection('obras')
-      .doc(obraId)
+      await firebase.firestore().collection('fornecedores')
+      .doc(FornecedorId)
       .delete()  
     } catch (error) {
       console.log(error)
@@ -25,7 +25,7 @@ export function ModalExcluirObra(props) {
       <Container >
         <h2>Deseja realmente excluir?</h2>
         <button className='btn-nao'>Não</button>
-        <button onClick={() => Excluir0bra(props.obraId)} className='btn-sim'>Sim</button>
+        <button onClick={() => ExcluirFornecedor(props.FornecedorId)} className='btn-sim'>Sim</button>
       </Container>
     </Modal>
   )
